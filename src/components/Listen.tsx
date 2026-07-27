@@ -65,7 +65,7 @@ export default function Listen() {
             <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
               <iframe
                 title="GravityOrbitDrift on YouTube"
-                src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_m8D6f-z767vli1Dsw0enMAk_8gWZ3abEo"
+                src="https://www.youtube.com/embed/jxf1ltTrt0A?si=qlGXVWlSrLi6L_bB"
                 width="100%"
                 height="380"
                 loading="lazy"
