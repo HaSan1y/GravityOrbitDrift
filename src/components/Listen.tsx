@@ -37,7 +37,7 @@ export default function Listen() {
             <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
               <iframe
                 title="GravityOrbitDrift on Spotify"
-                src="https://open.spotify.com/embed/artist/0TnOYISbd1XYRBk9myaseg?utm_source=generator&theme=0"
+                src="https://open.spotify.com/embed/artist/3LI2HVYaeWpSJSQ1Flxjkq?utm_source=generator&theme=0"
                 width="100%"
                 height="380"
                 loading="lazy"
