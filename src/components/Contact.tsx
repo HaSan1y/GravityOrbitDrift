@@ -68,19 +68,19 @@ export default function Contact() {
                 <p className="text-xs uppercase tracking-widest text-slate-500">
                   Booking
                 </p>
-                <p className="mt-1 text-slate-200">booking@gravityorbitdrift.com</p>
+                <p className="mt-1 text-slate-200">hasan.yildirim@outlook.com</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-widest text-slate-500">
                   Press / Licensing
                 </p>
-                <p className="mt-1 text-slate-200">press@gravityorbitdrift.com</p>
+                <p className="mt-1 text-slate-200">hasan.yildirim@outlook.com</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-widest text-slate-500">
                   General
                 </p>
-                <p className="mt-1 text-slate-200">hello@gravityorbitdrift.com</p>
+                <p className="mt-1 text-slate-200">hasan.yildirim@outlook.com</p>
               </div>
             </div>
           </div>
