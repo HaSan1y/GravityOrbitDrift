@@ -52,23 +52,30 @@
   .glass {
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.07),
       rgba(255, 255, 255, 0.02)
     );
     backdrop-filter: blur(16px) saturate(140%);
     -webkit-backdrop-filter: blur(16px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+      0 24px 60px -20px rgba(0, 0, 0, 0.7);
   }
 
   .glass-strong {
     background: linear-gradient(
       135deg,
-      rgba(124, 92, 255, 0.08),
-      rgba(34, 211, 238, 0.04)
+      rgba(124, 92, 255, 0.1),
+      rgba(34, 211, 238, 0.05)
     );
     backdrop-filter: blur(20px) saturate(160%);
     -webkit-backdrop-filter: blur(20px) saturate(160%);
     border: 1px solid rgba(124, 92, 255, 0.18);
+    box-shadow:
+      0 1px 0 0 rgba(255, 255, 255, 0.08) inset,
+      0 30px 80px -24px rgba(0, 0, 0, 0.8),
+      0 0 60px -20px rgba(124, 92, 255, 0.3);
   }
 
   .text-gradient {

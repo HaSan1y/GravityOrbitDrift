@@ -1,4 +1,5 @@
 import { Headphones, Orbit, Radio, Waves } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 const FEATURES = [
   {
@@ -45,22 +46,31 @@ export default function About() {
 
         <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((f, i) => (
-            <article
+            <TiltCard
               key={f.title}
-              className="reveal glass group relative overflow-hidden rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:border-white/20"
-              style={{ transitionDelay: `${i * 60}ms` }}
+              max={14}
+              scale={1.04}
+              className="reveal"
             >
-              <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-nebula-violet/10 blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-0" />
-              <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-nebula-blue/20 to-nebula-violet/20 text-nebula-cyan ring-1 ring-white/10">
-                <f.icon className="h-5 w-5" strokeWidth={1.5} />
-              </span>
-              <h3 className="mt-5 font-display text-base font-medium text-white">
-                {f.title}
-              </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-slate-400">
-                {f.body}
-              </p>
-            </article>
+              <article
+                className="glass group relative h-full overflow-hidden rounded-2xl p-6 transition-colors duration-500 hover:border-white/20"
+                style={{ transitionDelay: `${i * 60}ms` }}
+              >
+                {/* Depth glow */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-nebula-violet/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.04] to-transparent" />
+
+                <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-nebula-blue/25 to-nebula-violet/25 text-nebula-cyan shadow-lg ring-1 ring-white/10 [transform:translateZ(30px)]">
+                  <f.icon className="h-5 w-5" strokeWidth={1.5} />
+                </span>
+                <h3 className="relative mt-5 font-display text-base font-medium text-white [transform:translateZ(20px)]">
+                  {f.title}
+                </h3>
+                <p className="relative mt-2.5 text-sm leading-relaxed text-slate-400 [transform:translateZ(10px)]">
+                  {f.body}
+                </p>
+              </article>
+            </TiltCard>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Disc3, Clock } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 type Release = {
   title: string;
@@ -7,6 +8,7 @@ type Release = {
   duration: string;
   blurb: string;
   accent: string;
+  glow: string;
 };
 
 const RELEASES: Release[] = [
@@ -17,6 +19,7 @@ const RELEASES: Release[] = [
     duration: '52 min',
     blurb: 'Eight movements tracing a single orbit — from atmospheric entry to the long drift home.',
     accent: 'from-nebula-cyan/30 to-nebula-blue/10',
+    glow: 'rgba(34, 211, 238, 0.25)',
   },
   {
     title: 'Heliosphere',
@@ -25,6 +28,7 @@ const RELEASES: Release[] = [
     duration: '24 min',
     blurb: 'Four tracks recorded at the boundary where the solar wind meets interstellar space.',
     accent: 'from-nebula-violet/30 to-nebula-indigo/10',
+    glow: 'rgba(124, 92, 255, 0.25)',
   },
   {
     title: 'Transit',
@@ -33,6 +37,7 @@ const RELEASES: Release[] = [
     duration: '8 min',
     blurb: 'A slow, weightless passage. One chord, drifting, for the full duration of a flyby.',
     accent: 'from-nebula-blue/30 to-nebula-cyan/10',
+    glow: 'rgba(59, 130, 246, 0.25)',
   },
   {
     title: 'Event Horizon',
@@ -41,6 +46,7 @@ const RELEASES: Release[] = [
     duration: '48 min',
     blurb: 'The debut. A study in gravity and absence — the sound of light failing to escape.',
     accent: 'from-nebula-indigo/30 to-nebula-violet/10',
+    glow: 'rgba(79, 70, 229, 0.25)',
   },
 ];
 
@@ -72,35 +78,42 @@ export default function Releases() {
               {/* Node */}
               <span
                 className={`absolute -left-[2.45rem] flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br ${r.accent} ring-1 ring-white/15 md:-left-[2.7rem]`}
+                style={{ boxShadow: `0 0 24px -4px ${r.glow}` }}
               >
                 <Disc3 className="h-4 w-4 text-white" strokeWidth={1.5} />
               </span>
 
-              <div className="glass group rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 md:p-7">
-                <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-widest text-slate-400">
-                  <span className="rounded-full bg-white/5 px-3 py-1 text-nebula-cyan ring-1 ring-white/10">
-                    {r.year}
-                  </span>
-                  <span>{r.type}</span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" />
-                    {r.duration}
-                  </span>
+              <TiltCard max={6} scale={1.01} className="h-full">
+                <div className="glass group relative h-full overflow-hidden rounded-2xl p-6 transition-colors duration-500 hover:border-white/20 md:p-7">
+                  <div
+                    className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+                    style={{ background: r.glow }}
+                  />
+                  <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-widest text-slate-400 [transform:translateZ(20px)]">
+                    <span className="rounded-full bg-white/5 px-3 py-1 text-nebula-cyan ring-1 ring-white/10">
+                      {r.year}
+                    </span>
+                    <span>{r.type}</span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5" />
+                      {r.duration}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 font-display text-2xl font-semibold text-white [transform:translateZ(30px)]">
+                    {r.title}
+                  </h3>
+                  <p className="mt-2.5 max-w-2xl text-sm leading-relaxed text-slate-400 [transform:translateZ(15px)]">
+                    {r.blurb}
+                  </p>
+                  <a
+                    href="#listen"
+                    className="mt-5 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-nebula-cyan transition-colors hover:text-white"
+                  >
+                    Listen
+                    <span aria-hidden="true">→</span>
+                  </a>
                 </div>
-                <h3 className="mt-4 font-display text-2xl font-semibold text-white">
-                  {r.title}
-                </h3>
-                <p className="mt-2.5 max-w-2xl text-sm leading-relaxed text-slate-400">
-                  {r.blurb}
-                </p>
-                <a
-                  href="#listen"
-                  className="mt-5 inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-nebula-cyan transition-colors hover:text-white"
-                >
-                  Listen
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
+              </TiltCard>
             </li>
           ))}
         </ol>

@@ -1,12 +1,11 @@
-import { Radio, Github, Instagram, Twitter, Youtube, Music2, Send } from 'lucide-react';
+import { Radio, Instagram, Twitter, Music2, Send, Cloud } from 'lucide-react';
 
 const SOCIALS = [
   { label: 'Spotify', href: 'https://open.spotify.com', Icon: Music2 },
-  { label: 'YouTube', href: 'https://youtube.com', Icon: Youtube },
+  { label: 'SoundCloud', href: 'https://soundcloud.com', Icon: Cloud },
   { label: 'Instagram', href: 'https://instagram.com', Icon: Instagram },
   { label: 'Twitter / X', href: 'https://twitter.com', Icon: Twitter },
   { label: 'Bandcamp', href: 'https://bandcamp.com', Icon: Send },
-  { label: 'GitHub', href: 'https://github.com', Icon: Github },
 ];
 
 const NAV = [
