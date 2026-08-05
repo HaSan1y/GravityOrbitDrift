@@ -7,7 +7,6 @@ import Listen from '@/components/Listen';
 import Newsletter from '@/components/Newsletter';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import AmbientPlayer from '@/components/AmbientPlayer';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
         <Contact />
       </main>
       <Footer />
-      <AmbientPlayer />
     </div>
   );
 }
