@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Headphones } from 'lucide-react';
 import TiltCard from './TiltCard';
 
 const PLATFORMS = [
@@ -27,8 +27,19 @@ export default function Listen() {
             Stream the catalogue
           </h2>
           <p className="mt-5 text-base leading-relaxed text-slate-300">
-            Available on every major platform. Choose your destination, open
-            the link, and let the signal reach you.
+            Play tracks right here with the built-in player, or open your
+            preferred streaming platform below.
+          </p>
+        </div>
+
+        {/* Built-in player prompt */}
+        <div className="reveal mt-10 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4">
+          <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-nebula-blue/25 to-nebula-violet/25 text-nebula-cyan ring-1 ring-white/10">
+            <Headphones className="h-5 w-5" strokeWidth={1.5} />
+          </span>
+          <p className="text-sm text-slate-300">
+            Use the player button in the bottom-right corner to listen
+            directly — no external services required.
           </p>
         </div>
 
