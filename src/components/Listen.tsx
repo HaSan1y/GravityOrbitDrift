@@ -13,6 +13,7 @@ const PLATFORMS = [
   { name: 'SoundCloud', href: 'https://soundcloud.com', color: '#FF5500', initials: '☁' },
   { name: 'Bandcamp', href: 'https://bandcamp.com', color: '#629AA9', initials: 'B' },
 ];
+// <iframe src="https://www.youtube-nocookie.com/embed/-LLB-gQnAIo?autoplay=1&amp;rel=0&amp;modestbranding=1" title="Koe — turn a song into an AI music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="w-full h-full border-0"></iframe> //wtf why can this dude embed without being called heuristic by malwarebytes
 
 export default function Listen() {
   return (

@@ -21,21 +21,9 @@ const TRACKS: Track[] = [
   {
     title: 'Orbital Frequencies',
     album: 'Orbital Frequencies',
-    src: '/audio/01-orbital-frequencies.wav',
-    duration: '45:00',
-  },
-  {
-    title: 'Heliosphere',
-    album: 'Heliosphere',
-    src: '/audio/02-heliosphere.wav',
-    duration: '40:00',
-  },
-  {
-    title: 'Transit',
-    album: 'Transit',
-    src: '/audio/03-transit.wav',
-    duration: '50:00',
-  },
+    src: '/audio/00-Suspended-Chords.wav',
+    duration: '03:38',
+  }
 ];
 
 function fmt(sec: number): string {
@@ -168,11 +156,10 @@ export default function AudioPlayer() {
 
       {/* Player panel */}
       <div
-        className={`fixed bottom-5 right-5 z-40 w-[22rem] max-w-[calc(100vw-2.5rem)] transition-all duration-500 ${
-          open
-            ? 'pointer-events-auto translate-y-0 opacity-100'
-            : 'pointer-events-none translate-y-8 opacity-0'
-        }`}
+        className={`fixed bottom-5 right-5 z-40 w-[22rem] max-w-[calc(100vw-2.5rem)] transition-all duration-500 ${open
+          ? 'pointer-events-auto translate-y-0 opacity-100'
+          : 'pointer-events-none translate-y-8 opacity-0'
+          }`}
       >
         <div className="glass-strong overflow-hidden rounded-3xl">
           {/* Header */}
@@ -289,11 +276,10 @@ export default function AudioPlayer() {
               <button
                 key={t.title}
                 onClick={() => selectTrack(i)}
-                className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-colors ${
-                  i === current
-                    ? 'bg-white/8 text-white'
-                    : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'
-                }`}
+                className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-colors ${i === current
+                  ? 'bg-white/8 text-white'
+                  : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'
+                  }`}
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/5 text-[10px] font-mono">
                   {i === current && playing ? (
